@@ -1,6 +1,6 @@
 RailsAdmin.config do |config|
 
-  config.main_app_name = ["Яркий фотомаркет", "CRM"]
+  config.main_app_name = ["Компания", "Мое приложение"]
   
   ### Popular gems integration
 
@@ -46,7 +46,7 @@ RailsAdmin.config do |config|
   config.navigation_static_label = "Полезные ссылки"
   
   config.navigation_static_links = {
-    'Внутрений портал' => 'http://ym.ym'
+    'Внутрений портал' => 'http://#'
   }  
   
 end
