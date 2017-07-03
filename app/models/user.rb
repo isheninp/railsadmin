@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   has_and_belongs_to_many :roles
+  
+  def title
+    firstname+' ' +lastname
+  end
+  
+  def full_name
+    firstname+' ' +middlename+' ' +lastname
+  end
 end

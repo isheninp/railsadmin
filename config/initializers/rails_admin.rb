@@ -34,6 +34,7 @@ RailsAdmin.config do |config|
 
   config.model 'User' do
     list do
+      field :full_name
       field :email
       field :roles
     end

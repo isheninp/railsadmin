@@ -159,6 +159,7 @@ ru:
       role: "Роли"
     attributes:
       role:
+        full_name: "ФИО"
         title: "Название"
         users: "Пользователи"
       user:

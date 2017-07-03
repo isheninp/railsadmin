@@ -1,14 +1,18 @@
 Rails admin control panel template
 
-added Rollincode theme
+Added: 
 
-added russian locale default
+Rollincode theme
 
-added roles
+russian locale default
 
-added users
+roles
 
-added devise
+users
+
+devise
+
+________________
 
 ruby 2.4.1p111
 
