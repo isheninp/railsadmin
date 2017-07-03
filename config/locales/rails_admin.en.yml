@@ -155,42 +155,19 @@ ru:
         col_sep_help: "Разделитель по умолчанию ('%{value}')" # value is default_col_sep
   activerecord:
     models:
-      sotrudnik: "сотрудники на ИС"
-      otdel: "подразделения"
-      manager: "руководители"
-      user: "Пользователи системы оповещения"
+      user: "Пользователи"
+      role: "Роли"
     attributes:
-      sotrudnik:
-        id: "№пп"
-        title: "ФИО"
-        datapriema: "Дата приема"
-        datakonca: "Дата окончания"
-        datanapominania: "Дата напоминания"
-        created_at: "Создано"
-        updated_at: "Обновлено"
-        otdel: "Отдел"
-        managers: "Оповещаемые руководители"
-      manager:
-        id: "№пп"
-        title: "ФИО"
-        otdel: "Отдел"
-        sotrudniks: "Сотрудники на ИС"
-        created_at: "Создано"
-        updated_at: "Обновлено"
-      otdel:
-        id: "№пп"
+      role:
         title: "Название"
-        created_at: "Создано"
-        updated_at: "Обновлено"
-        managers:  "Руководители"
-        sotrudniks: "Сотрудники на ИС"
+        users: "Пользователи"
       user:
         sign_in_count: "счетчик посещений"
         current_sign_in_at: "текущий заход" 
         last_sign_in_at: "последний заход"
         current_sign_in_ip: "текущий заход с ip"
         last_sign_in_ip: "последний заход с ip"
-        admin:  "доступ?"
+        roles: "Роли"
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
