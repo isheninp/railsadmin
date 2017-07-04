@@ -11,7 +11,7 @@ class User < ApplicationRecord
   end
   
   def full_name
-    firstname+' ' +middlename+' ' +lastname
+    firstname+' ' +middlename+' ' +lastname rescue 'undefined'
   end
   
 end

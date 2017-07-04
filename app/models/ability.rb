@@ -29,23 +29,30 @@ class Ability
       #can :manage, [User, Role]  # allow managers to do anything to products and users
       #can :update, Role, :hidden => false  # allow sales to only update visible products
       
+    end      
       
-      
-      p '+++++++++++++++++++++'
+      p '---roles - ----------------'
+      #Employer.joins({:people => {:household => {:suburb => :city}}})
+      #p Permission.joins({:roles => :users})
+      p = Permission.joins(roles: :users).where(users: {id: user.id})
+      #p Permission.joins({:roles => {:users => {id: user.id}}})
       #p Permission.includes(:roles).includes(:users).where(users: {id: user.id})
-      p Role.includes(:users).where(users: {id: user.id})
-      p '-------------------------'
-      p Permission.includes(:roles)
+      #p Role.includes(:users).where(users: {id: user.id}).includes(:permissions)
       
-#      can do |action, subject_class, subject|
- #       @p.each do |permission|
-  #        permission.subject_class == subject_class.to_s &&  (subject.nil? || permission.subject_id.nil? || permission.subject_id == subject.id)
-   #     end 
-    #  end      
+
+      
+      can do |action, subject_class, subject|
+        p.each do |permission|
+          permission.subject_class == subject_class.to_s 
+          &&  (subject.nil? || permission.subject_id.nil? || permission.subject_id == subject.id)
+        end 
+      end      
+
+p '-------------------------'
 
 can :manage, :all             # allow superadmins to do anything
       
-    end
+
     
     
 # Always performed

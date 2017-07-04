@@ -6,6 +6,7 @@ class Permission < ApplicationRecord
     ActiveRecord::Base.descendants.each do |c|
       classes << c.name
     end
+    classes << ":all"
     create do
       field :title
       field :action, :enum do
@@ -15,14 +16,15 @@ class Permission < ApplicationRecord
             ['Create','create'],
             ['Update','update'],
             ['Destroy','destroy'],
-            ['Access','access']
+            ['Access','access'],
+            ['Manage','manage']
           ]
         end
       end
       field :subject_id
       field :subject_class, :enum do
         enum do
-          classes
+          classes.uniq
         end
       end      
     end
