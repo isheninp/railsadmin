@@ -1,17 +1,19 @@
 RailsAdmin.config do |config|
 
+  config.parent_controller = 'ApplicationController'
+  
   config.main_app_name = ["Компания", "Мое приложение"]
   
   ### Popular gems integration
 
   ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
 
   ## == Cancan ==
-  # config.authorize_with :cancan
+  config.authorize_with :cancan
 
   ## == Pundit ==
   # config.authorize_with :pundit
@@ -28,16 +30,25 @@ RailsAdmin.config do |config|
   config.model 'Role' do
     list do
       field :title
+      field :description
       field :users
     end
   end
 
   config.model 'User' do
+    navigation_label 'CRM'
+    weight 9
     list do
       field :full_name
       field :email
       field :roles
     end
+    edit do
+      group :SSDD do
+        label "О пользователе"
+        help "Заполните тут поля..."
+      end
+    end    
   end
   
   config.actions do
