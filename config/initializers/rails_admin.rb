@@ -33,6 +33,7 @@ RailsAdmin.config do |config|
     list do
       field :title
       field :description
+      field :permissions
       field :users
     end
   end
