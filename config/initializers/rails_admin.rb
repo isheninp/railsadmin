@@ -32,8 +32,8 @@ RailsAdmin.config do |config|
     weight 99
     list do
       field :title
-      field :users
       field :description
+      field :users
     end
   end
 
