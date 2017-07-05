@@ -28,16 +28,18 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
   config.model 'Role' do
+    navigation_label 'Безопасность'
+    weight 99
     list do
       field :title
-      field :description
       field :users
+      field :description
     end
   end
 
   config.model 'User' do
-    navigation_label 'CRM'
-    weight 9
+    navigation_label 'Безопасность'
+    weight 99
     list do
       field :full_name
       field :email
@@ -50,7 +52,21 @@ RailsAdmin.config do |config|
       end
     end    
   end
-  
+
+  config.model 'Permission' do
+    navigation_label 'Безопасность'
+    weight 99
+    list do
+      field :id
+      field :title
+      field :action
+      field :roles
+      field :subject_class
+      field :subject_id
+      field :description
+    end
+  end
+    
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

@@ -157,6 +157,7 @@ ru:
     models:
       user: "Пользователи"
       role: "Роли"
+      permission: "Разрешения"
     attributes:
       role:
         full_name: "ФИО"
