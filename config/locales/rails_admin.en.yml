@@ -117,6 +117,10 @@ ru:
         title: "История для %{model_label} '%{object_label}'"
         menu: "История"
         breadcrumb: "история"
+      charts:
+        title: "График"
+        menu: "График"
+        breadcrumb: "График"
     form:
       cancel: "Отмена"
       basic_info: "Основное"
