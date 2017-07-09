@@ -12,6 +12,8 @@ users
 
 devise
 
+graph - rails_admin_charts
+
 ________________
 
 ruby 2.4.1p111
