@@ -8,11 +8,19 @@ russian locale default
 
 roles
 
+permissions
+
 users
 
 devise
 
+cancan
+
 graph - rails_admin_charts
+
+
+dont forget load_and_authorize_resource in controller!
+
 
 ________________
 
