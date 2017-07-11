@@ -3,13 +3,12 @@ class Ability
 
   def initialize(user)
      
+    #user ||= User.new # guest user (not logged in)
     return if user.nil?
     
     permissions = Permission.joins(roles: :users).where(users: {id: user.id})
 
     permissions.each do |permission|
-    puts permission.subject_class.downcase
-    puts permission.action
     if ["ALL", "Rails_admin", "Dashboard"].include? permission.subject_class
       can permission.action.to_sym, permission.subject_class.downcase.to_sym rescue begin puts 'CanCan Error: '+ permission.action.to_s + ', '+ permission.subject_class end
       # TO DO
