@@ -28,8 +28,8 @@ class Ability
 #can :manage, [User, Role]  # allow managers to do anything to products and users
 #can :update, Role, :hidden => false  # allow sales to only update visible products
 
-can :access, :rails_admin # needed to access RailsAdmin
-can :dashboard            # dashboard access
+#can :access, :rails_admin # needed to access RailsAdmin
+#can :dashboard            # dashboard access
 
 # Performed checks for `collection` scoped actions:
 #can :index, Model         # included in :read
