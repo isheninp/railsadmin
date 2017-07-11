@@ -3,12 +3,17 @@ class Ability
 
   def initialize(user)
      
+    return if user.nil?
+    
     permissions = Permission.joins(roles: :users).where(users: {id: user.id})
 
     permissions.each do |permission|
-    if ["ALL", "Rails_admin", "Dashboard"].include? permission.subject_class  
+    puts permission.subject_class.downcase
+    puts permission.action
+    if ["ALL", "Rails_admin", "Dashboard"].include? permission.subject_class
       can permission.action.to_sym, permission.subject_class.downcase.to_sym rescue begin puts 'CanCan Error: '+ permission.action.to_s + ', '+ permission.subject_class end
-      can :dashboard # TO DO 
+      # TO DO
+      can :dashboard  
     else
       if permission.subject_id.nil?
         can permission.action.to_sym, permission.subject_class.constantize rescue begin puts 'CanCan Error: '+ permission.action.to_s + ', '+ permission.subject_class end
@@ -18,16 +23,12 @@ class Ability
     end
   end
       
-#can :access, :rails_admin
-#can :dashboard              # grant access to the dashboard
+
 #can :manage, :all             # allow superadmins to do anything
 #can :manage, [User, Role]  # allow managers to do anything to products and users
 #can :update, Role, :hidden => false  # allow sales to only update visible products
-    
-# Always performed
-#can :access, :rails_admin # needed to access RailsAdmin
 
-# Performed checks for `root` level actions:
+#can :access, :rails_admin # needed to access RailsAdmin
 #can :dashboard            # dashboard access
 
 # Performed checks for `collection` scoped actions:
@@ -62,13 +63,7 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
-    
-    #can do |action, subject_class, subject|
-    #  user.permissions.find_all_by_action(aliases_for_action(action)).any? do |permission|
-    #    permission.subject_class == subject_class.to_s &&
-    #      (subject.nil? || permission.subject_id.nil? || permission.subject_id == subject.id)
-    #  end
-    #end    
+   
     
   end
 end

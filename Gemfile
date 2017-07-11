@@ -9,7 +9,7 @@ gem 'rails_admin_rollincode', '~> 1.0'
 gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
 
 gem 'devise'
-gem 'cancancan'
+gem 'cancan'
 
 gem 'seed_dump'
 
